@@ -1,22 +1,397 @@
-<html>
+<!doctype html>
+<html lang="en-US">
 	<head>
 		<meta charset="utf-8" />
-		<title>emptyBit</title>
-		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="styles.css" rel="stylesheet"/>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>emptyBit - software development</title>
+
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src="assets/plugins/lt-ie9/html5.js"></script>
+			<script type="text/javascript" src="assets/plugins/lt-ie9/respond.min.js"></script>
+			<script type="text/javascript" src="assets/plugins/lt-ie9/excanvas.compiled.js"></script>
+		<![endif]--> 
+
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Dosis:300,400" rel="stylesheet" type="text/css" />
+
+
+		<!-- CORE CSS FRAMEWORK -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/font-linecons/linecons.css" rel="stylesheet" type="text/css" />
+
+		<!-- PLUGINS -->
+		<link href="assets/css/superslides.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/owl.carousel.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+		<!-- CSS TEMPLATE -->
+		<link href="assets/css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/framework.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/typography.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+		<link href="assets/css/blog.css" rel="stylesheet" type="text/css" />
+
+		<!-- colors : demo only -->
+		<link href="assets/css/color/green.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+
+		<!-- ICONS -->
+		<link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+		<!-- Morenizr -->
+		<script type="text/javascript" src="assets/plugins/modernizr.min.js"></script>
 	</head>
 	<body>
-		<div id="main">
-			<div id="logo"></div>
-			<div id="dev">software development</div>
-			<div id="contact">
-				<p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:michal@emptybit.pl">michal@emptybit.pl</a></p>
-				<p><span class="glyphicon glyphicon-earphone"></span> +48 695 448 980</p>
+		<!-- HOME -->
+		<section id="home" class="full-screen"><!-- full-screen or half-screen (550px height) -->
+
+			<div id="slider">
+
+				<!-- slider navigation -->
+				<nav class="slides-navigation">
+					<a class="prev" href="#"></a>
+					<a class="next" href="#"></a>
+				</nav>
+
+				<ul class="slides-container">
+
+					<!-- Item 1 -->
+					<li>
+						<div class="image-caption">
+							<hr /><hr />
+							<div class="inner">
+								<h2 class="bigtext strtoupper nomargin">SOFTWARE DEVELOPMENT</h2>
+								<p>HIGH-END SOLUTIONS</p>
+							</div>
+							<hr /><hr />
+						</div>
+
+						<!--<span class="overlay"></span>-->
+						<div style="background-image: url('assets/images/preview/slider/background.jpg');" class="fullscreen-img"></div>
+					</li>
+
+					<!-- Item 2 -->
+					<li>
+						<div class="image-caption">
+							<hr /><hr />
+							<div class="inner">
+								<h1 class="bigtext strtoupper nomargin">IT CONSULTATIONS</h1>
+								<p>THE EDGE YOU NEED</p>
+							</div>
+							<hr /><hr />
+						</div>
+
+						<!--<span class="overlay"></span>-->
+						<div style="background-image: url('assets/images/preview/slider/vision.jpg');" class="fullscreen-img"></div>
+					</li>
+
+				</ul>
+
 			</div>
-		</div>
-		<script src="js/bootstrap.min.js"></script>
+
+		</section>
+		<!-- /HOME -->
+
+
+
+		<!-- Main Nav -->
+		<header id="header">
+
+			<nav class="navbar navbar-inverse" role="navigation"><!-- add "wihite" class for white nav bar -->
+				<div class="container">
+
+					<!-- Mobile Menu Button -->
+					<button id="mobileMenu" class="fa fa-bars" type="button" data-toggle="collapse" data-target=".navbar-collapse"></button>
+
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<a class="navbar-brand scrollTo" href="#home">
+							<img src="assets/images/logo.png" alt="" height="50" /> 
+							<!--
+								Span class:
+									- dark
+									- white
+									- styleColor (if you select "green" style color, the color will be green).
+
+									You can combine them 
+									Example:
+										<span class="white">ISIS</span><span class="styleColor">ONE</span>
+							-->
+						</a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+						<!-- Fullscreen Button - Unavailable for IE -->
+						<a href="#" class="btn-fullscreen"><i class="fa fa-external-link"></i></a>
+
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#home" class="scrollTo">Home</a></li>
+							<li><a href="#about" class="scrollTo">About</a></li>
+							<li><a href="#contact" class="scrollTo">Contact</a></li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+
+				</div>
+			</nav>
+
+		</header>
+		<!-- /Main Nav -->
+
+
+
+
+
+		<!-- RELEASED -->
+		<section id="released">
+			<div class="container">
+
+				<div class="row">
+
+					<!-- left -->
+					<div class="col-md-8">
+
+						<header>
+							<h1>EMPTY<strong>BIT</strong></h1>
+							<p>We'd like to change your vision about technology.</p>
+						</header>
+
+						<article>
+							<!--
+								CONTENT
+							-->
+							<p>
+							We are a company that provides a variety of different IT services from Web page creation, through application design, to large systems development and consultations. To maintain wide range of services we have created a team of specialists. They are available to you according to your current needs and ideas, so you can have it all in one place.
+							</p>
+							<span class="spacer"><!-- spacer 60px --></span>
+						</article>
+
+					</div>
+
+
+					<!-- right -->
+					<div class="col-md-4 nopadding relative">
+						<!--
+							IMAGE
+						-->
+						<figure class="animate_from_bottom hidden-xs top">
+							<img class="img-responsive" src="assets/images/logo_g.png" width="504" height="153" alt="" />
+						</figure>
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+		<!-- /RELEASED -->
+
+		<!-- QUOTE -->
+		<section class="cover" style="background-image:url('assets/images/preview/slider/3.jpg')">
+			<span class="overlay"></span>
+			<div class="container text-center" data-animation="bounceIn">
+				<q>Computers themselves, and software yet to be developed, will revolutionize the way we learn.</q>
+				<cite>Steve Jobs</cite>
+			</div>
+		</section>
+		<!-- /QUOTE -->
+
+		<!-- ABOUT -->
+		<section id="about">
+			<div class="container">
+				<header class="text-center">
+					<h1>ABOUT US</h1>
+				</header>
+
+				<div class="divider"><!-- lines divider --></div>
+
+				<article class="text-center big-paragraph">
+					<p>Our team is a group of people, who have different specializations. This is why, we can offer you so much. Moreover, we have a wide range of reliable contractors. This way we can always keep balance and adjust quickly to your needs. We are trying to be agile for you.</p>
+				</article>
+
+				<div class="me-picture text-center animate_fade_in">
+
+					<!-- ITEM -->
+					<div class="item">
+						<!-- social icons -->
+						<span class="socials animated bounceIn">
+							<a target="_blank" href="https://www.linkedin.com/profile/view?id=150278892" class="social fa fa-linkedin"></a>
+							<a target="_blank" href="https://plus.google.com/u/0/+Micha%C5%82Wilczak" class="social fa fa-google-plus"></a>
+						</span>
+
+						<!-- image -->
+						<img class="img-responsive" src="assets/images/mw.jpg" width="200" height="200" alt="" />
+
+						<!-- name -->
+						<div class="member-name">
+							<h3>
+								Michał Wilczak
+								<small>CEO</small>
+							</h3>
+						</div>
+
+					</div>
+					<!-- /ITEM -->
+
+					<!-- ITEM -->
+					<div class="item">
+
+						<!-- social icons -->
+						<span class="socials animated bounceIn">
+							<a target="_blank" href="https://www.linkedin.com/profile/view?id=156961767" class="social fa fa-linkedin"></a>
+							<a target="_blank" href="https://plus.google.com/103930239728454607888" class="social fa fa-google-plus"></a>
+						</span>
+
+						<!-- image -->
+						<img class="img-responsive" src="assets/images/jc.jpg" width="200" height="200" alt="" />
+
+						<!-- name -->
+						<div class="member-name">
+							<h3>
+								Joanna Czarnecka
+								<small>CONSULTANT</small>
+							</h3>
+						</div>
+
+					</div>
+					<!-- /ITEM -->
+				</div>
+
+
+				<article>
+					<div class="row text-left">
+
+						<!-- Passion -->
+						<div class="col-md-4">
+							<h3>Reliability</h3>
+							<p>Our current team is a group of people, who have different specializations. This is why, we can offer you so much. Moreover, we have a wide range of reliable contractors. This way we can always keep balance and adjust quickly to your needs. We are trying to be agile for you.</p>
+						</div>
+
+
+						<!-- Precision -->
+						<div class="col-md-4">
+							<h3>Passion</h3>
+							<p>We are passionate about our work and encourage our clients to take part in the process.</p>
+						</div>
+
+
+						<!-- Simplicity -->
+						<div class="col-md-4">
+							<h3>Simplicity</h3>
+							<p>At emptyBit we believe that the simplest solution is the best one. We are will do our best to solve you problem.</p>
+						</div>
+
+					</div>
+				</article>
+
+				<!-- curriculum vitae button  -->
+				<!--
+					<article class="curriculum-vitae text-center">
+						<a href="#" class="plusNav">+</a> 
+						<p>curriculum vitae</p>
+					</article>
+				-->
+
+			</div>
+		</section>
+		<!-- /ABOUT -->
+
+
+		<!-- CONTACT -->
+		<section id="contact" class="alternate arrow-down">
+			<div class="container">
+				<header class="text-center">
+					<h1>CONTACT</h1>
+					<p>FEEL FREE TO CONTACT US</p>
+				</header>
+
+				<div class="divider"><!-- lines divider --></div>
+
+				<article>
+				
+				<div class="center-block" id="contact-container">
+					<p class="big-paragraph">
+						<span class="glyphicon glyphicon-earphone"></span> +48 695 448 980
+					</p>				
+					<p class="big-paragraph">
+						<span class="glyphicon glyphicon-envelope"></span> <a href="mailto:michal@emptybit.pl">michal@emptybit.pl</a>
+					</p>
+				</div>
+				</article>
+			</div>
+		</section>
+		<!-- /CONTACT -->
+
+
+
+
+
+
+
+
+		<!-- FOOTER -->
+		<footer>
+
+			<!-- SCROOL TO TOP -->
+			<a href="#toTop" class="fa fa-arrow-up toTop"></a>
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-md-6 copyright">
+						emptyBit<br />
+						2014 &copy; All Rights Reserved.
+					</div>
+
+					<div class="col-md-6 text-right">
+						<a href="https://www.linkedin.com/profile/view?id=150278892" class="social fa fa-linkedin"></a>
+						<a href="https://plus.google.com/u/0/+Micha%C5%82Wilczak" class="social fa fa-google-plus"></a>
+					</div>
+
+				</div>
+
+			</div>
+		</footer>
+		<!-- /FOOTER -->
+
+
+
+		<!-- CORE FILES -->
+		<script type="text/javascript" src="assets/plugins/jquery/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/jquery.isotope.js"></script>
+		<script type="text/javascript" src="assets/plugins/masonry.js"></script>
+
+		<!-- PLUGINS -->
+		<script type="text/javascript" src="assets/plugins/jquery-fitvids/jquery.fitvids.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/jquery-appear/jquery.appear.js"></script>
+		<script type="text/javascript" src="assets/plugins/superslides/dist/jquery.superslides.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/jquery-owl-carousel/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/carouFredSel/jquery.carouFredSel-6.2.1-packed.js"></script>
+		<script type="text/javascript" src="assets/plugins/jquery-countTo/jquery.countTo.js"></script>
+		<script type="text/javascript" src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/jquery.mb.YTPlayer.js"></script><!-- Youtube video background -->
+		<script type="text/javascript" src="assets/plugins/holder.js"></script><!-- delete on production -->
+
+		<!-- js scripts -->
+		<script async type="text/javascript" src="assets/js/scripts.js"></script>
+
+		<script async type="text/javascript" src="assets/plugins/styleswitcher/styleswitcher.js"></script>
+
+
+		<!-- Change UA-XXXXX-X with your site ID -->
+		<!--<script>
+			window._gaq = [['_setAccount','UA-XXXXX-X'],['_trackPageview'],['_trackPageLoadTime']];
+			Modernizr.load({load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'});
+		</script>  -->
+
 	</body>
 </html>

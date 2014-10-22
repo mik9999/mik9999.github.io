@@ -1,0 +1,11 @@
+#contact-container{
+	width: 255px;
+}
+
+#contact-container a{
+	color: #666;
+}
+
+#contact-container a:hover{
+	color: #7DC24F;
+}
