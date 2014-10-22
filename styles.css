@@ -4,11 +4,12 @@ body {
 	padding: 0;
 }
 #main{
-	top:50%;
-	margin-top: -100px;
-	left: 50%;
-	margin-left: -232px;
-	position: absolute;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 484px;
+	padding: 10px;
+	height: 243px;
 }
 
 #contact{
