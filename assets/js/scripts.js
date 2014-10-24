@@ -923,6 +923,9 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 		jQuery(this).siblings().removeClass('faded');
 	});
 
-$(".fullscreen-img").load(function() {  
-    console.info("Loaded", this);
+
+$( "img.preloadImage" ).load(function() {
+  if ( $( this ).height() > 1000) {
+    $( this ).parent().fadeIn();
+  }
 });
