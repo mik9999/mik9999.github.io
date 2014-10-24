@@ -922,3 +922,7 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 	}, function(){
 		jQuery(this).siblings().removeClass('faded');
 	});
+
+	$('.fullscreen-img').waitForImages($.noop, function() {
+	        $(this).parent().fadeIn();
+	});
