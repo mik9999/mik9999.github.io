@@ -88,13 +88,13 @@ jQuery(window).load(function() {
 
 	
 	// Stop on mouse over ! 
-	jQuery('#slides').on('mouseenter', function() {
+	jQuery('#slider').on('mouseenter', function() {
 		jQuery(this).superslides('stop');
-		 console.log('Stopped')
+		//console.log('Stopped')
 	});
-	jQuery('#slides').on('mouseleave', function() {
+	jQuery('#slider').on('mouseleave', function() {
 		jQuery(this).superslides('start');
-		 console.log('Started')
+		//console.log('Started')
 	});
 });
 
