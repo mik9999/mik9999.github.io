@@ -86,7 +86,7 @@
 		});
 	}
 
-	/* 
+	
 	// Stop on mouse over ! 
 	jQuery('#slides').on('mouseenter', function() {
 		jQuery(this).superslides('stop');
@@ -96,7 +96,6 @@
 		jQuery(this).superslides('start');
 		// console.log('Started')
 	});
-	*/
 
 // });
 
