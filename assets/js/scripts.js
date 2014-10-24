@@ -924,5 +924,5 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 	});
 
 $('.fullscreen-img').waitForImages($.noop, function() {
-        $(this).fadeIn();
+        $(this).parent().fadeIn();
 });
