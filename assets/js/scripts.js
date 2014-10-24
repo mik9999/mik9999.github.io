@@ -73,7 +73,7 @@
 		jQuery("#slider").superslides({
 			animation: "fade", 		// slide|fade
 			pagination: true, 		// true|false
-			play: true,	 		// false to disable autoplay -OR- miliseconds (eg.: 1000 = 1s)
+			play: 3000,	 		// false to disable autoplay -OR- miliseconds (eg.: 1000 = 1s)
 			animation_speed: 600,	// animation transition
 
 			elements: {
