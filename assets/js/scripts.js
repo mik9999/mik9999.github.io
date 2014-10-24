@@ -923,6 +923,6 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 		jQuery(this).siblings().removeClass('faded');
 	});
 
-$('fullscreen-img').waitForImages(function() {
+$('.fullscreen-img').waitForImages(function() {
     $(this).fadeIn();
 });
