@@ -66,7 +66,7 @@
 
 /**	02. SLIDER
 *************************************************** **/
-// jQuery(window).load(function() {
+jQuery(window).load(function() {
 
 	// Home Slider (top)
 	if(jQuery("#slider").length > 0) {
@@ -90,14 +90,13 @@
 	// Stop on mouse over ! 
 	jQuery('#slides').on('mouseenter', function() {
 		jQuery(this).superslides('stop');
-		// console.log('Stopped')
+		 console.log('Stopped')
 	});
 	jQuery('#slides').on('mouseleave', function() {
 		jQuery(this).superslides('start');
-		// console.log('Started')
+		 console.log('Started')
 	});
-
-// });
+});
 
 	
 
