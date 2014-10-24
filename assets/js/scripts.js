@@ -925,7 +925,5 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 
 
 $( "img.preloadImage" ).load(function() {
-  if ( $( this ).height() > 1000) {
     $( this ).parent().fadeIn();
-  }
 });
