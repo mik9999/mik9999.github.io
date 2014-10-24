@@ -66,14 +66,14 @@
 
 /**	02. SLIDER
 *************************************************** **/
-jQuery(window).load(function() {
+//jQuery(window).load(function() {
 
 	// Home Slider (top)
 	if(jQuery("#slider").length > 0) {
 		jQuery("#slider").superslides({
 			animation: "fade", 		// slide|fade
 			pagination: true, 		// true|false
-			play: 5000,	 		// false to disable autoplay -OR- miliseconds (eg.: 1000 = 1s)
+			play: false,	 		// false to disable autoplay -OR- miliseconds (eg.: 1000 = 1s)
 			animation_speed: 600,	// animation transition
 
 			elements: {
@@ -86,7 +86,7 @@ jQuery(window).load(function() {
 		});
 	}
 
-	
+	/*
 	// Stop on mouse over ! 
 	jQuery('#slider').on('mouseenter', function() {
 		jQuery(this).superslides('stop');
@@ -95,8 +95,8 @@ jQuery(window).load(function() {
 	jQuery('#slider').on('mouseleave', function() {
 		jQuery(this).superslides('start');
 		//console.log('Started')
-	});
-});
+	});*/
+//});
 
 	
 
