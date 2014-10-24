@@ -925,6 +925,6 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 
 
 $( "img.preloadImage" ).load(function() {
-	console.info('Loaded', this);
-    $( this ).parent().fadeIn();
+	var img = $(this);
+	img.parent().css('background-image', 'url(' + img.attr('src') + ')');
 });
