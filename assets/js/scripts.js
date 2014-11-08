@@ -785,7 +785,7 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 	// -----------------------------------------------------------------------------------
 
 	if(jQuery("#home").length > 0) {
-
+	
 		window.isOnTop 		= true;
 		window.homeHeight 	= jQuery("#home").height() - window.navHeight;
 		 /*
@@ -793,7 +793,8 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 			Benefits: no unseen jquery actions, faster rendering
 		 */
 		jQuery(window).scroll(function() {
-			if(jQuery(document).scrollTop() > window.homeHeight) {
+			var cookieBarHeight = jQuery('#cookie-bar').length == 1 ? jQuery('#cookie-bar').height() : 0;
+			if(jQuery(document).scrollTop() > (window.homeHeight - cookieBarHeight)) {
 				if(window.isOnTop === true) {
 					jQuery('#header').addClass('fixed');
 					jQuery('#cookie-bar').addClass('fixed');
