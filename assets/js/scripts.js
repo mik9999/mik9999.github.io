@@ -803,7 +803,9 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 			} else {
 				if(window.isOnTop === false) {
 					jQuery('#header').removeClass('fixed');
-					jQuery('#cookie-bar').removeClass('fixed');
+					if($('#mobileMenu').css('display') == 'none'){
+						jQuery('#cookie-bar').removeClass('fixed');
+					}
 					window.isOnTop = true;
 				}
 			}
@@ -811,8 +813,17 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 
 		jQuery(window).resize(function() {
 			window.homeHeight = jQuery("#home").height() - window.navHeight;
+			if($('#mobileMenu').css('display') != 'none' || jQuery('#header').hasClass('fixed')){
+				jQuery('#cookie-bar').addClass('fixed');
+			}else{
+				jQuery('#cookie-bar').removeClass('fixed');
+			}
+			jQuery(window).scroll();
 		});
-
+		
+		jQuery(window).ready(function(){
+			jQuery(window).scroll();
+		});
 	}
 
 	// mobile - hide on click!
@@ -926,6 +937,7 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 		jQuery(this).siblings().removeClass('faded');
 	});
 	
-	$(document).ready(function(){
+	jQuery(document).ready(function(){
 		$.cookieBar();
+		jQuery(window).resize();
 	});
