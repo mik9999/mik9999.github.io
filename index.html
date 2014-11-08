@@ -633,6 +633,11 @@
 
 		  ga('create', 'UA-56557029-1', 'auto');
 		  ga('send', 'pageview');
+		  $(document).ready(function(){
+			$('a').click(function(e){
+				ga('send', 'event', 'button', 'click', 'link', e.currentTarget.href);
+			});
+		  });
 		</script>
 	</body>
 </html>
