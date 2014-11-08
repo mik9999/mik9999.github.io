@@ -4,7 +4,7 @@ line-height: 24px;
 color: #eeeeee;
 text-align: center;
 padding: 3px 0;
-z-index: 9999;
+z-index: 2;
 position: fixed;
 top: 0;
 width: 100%;}
