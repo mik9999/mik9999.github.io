@@ -796,11 +796,13 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 			if(jQuery(document).scrollTop() > window.homeHeight) {
 				if(window.isOnTop === true) {
 					jQuery('#header').addClass('fixed');
+					jQuery('#cookie-bar').addClass('fixed');
 					window.isOnTop = false;
 				}
 			} else {
 				if(window.isOnTop === false) {
 					jQuery('#header').removeClass('fixed');
+					jQuery('#cookie-bar').removeClass('fixed');
 					window.isOnTop = true;
 				}
 			}
@@ -921,4 +923,8 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 		jQuery(this).siblings().addClass('faded');
 	}, function(){
 		jQuery(this).siblings().removeClass('faded');
+	});
+	
+	$(document).ready(function(){
+		$.cookieBar();
 	});
