@@ -938,6 +938,10 @@ jQuery("#newsletter-subscribe").bind("click", function(e) {
 	});
 	
 	jQuery(document).ready(function(){
-		$.cookieBar();
+		if(lang == 'EN'){
+			$.cookieBar();
+		}else{
+			$.cookieBar({message: 'Używamy ciasteczek do monitorowania ruchu na naszej stronie.', acceptText: 'Rozumiem'});
+		}
 		jQuery(window).resize();
 	});
