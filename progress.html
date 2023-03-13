@@ -7,7 +7,7 @@
 			.text{
 				display: block;
 				text-align: center;
-				margin-top: 20px;
+				margin-top: 40px;
 				margin-bottom: 20px;
 				font-size: 2em;
 			}
@@ -24,11 +24,23 @@
 			}
 		</style>
 		<script>
+			function setWeekNumber(){
+				var currentDate = new Date();
+				var startDate = new Date(currentDate.getFullYear(), 0, 1);
+				var days = Math.floor((currentDate - startDate) /
+					(24 * 60 * 60 * 1000));
+         
+				var weekNo = Math.ceil(days / 7);
+				document.getElementById("week").innerHTML = "Week's progress (W" + weekNo + ")";
+			}
+			
 			function update(){	
 				var element = document.getElementById("counter");
+				var element2 = document.getElementById("counter2");
 				var date = new Date();
 				
-				var progress = 0.00;
+				var progress = 0.0;
+				var weekProgress = (date.getDay()-1)/5;
 				
 				if(date.getHours() > 9){
 					progress += (date.getHours() - 9)/8;
@@ -38,21 +50,36 @@
 				}
 				
 				if(date.getHours() > 17){
-					progress = 100.0;
+					progress = 1.0;
 				}
-							
+				
+				weekProgress += progress/5;
+				
+				if(date.getDay() == 0 || date.getDay() == 6){
+					weekProgress = 0.0;
+				}
+				
 				element.innerHTML = (progress*100).toFixed(3)+"%";
 				element.style.width = (progress*100).toFixed(3)+"%";
+				element2.innerHTML = (weekProgress*100).toFixed(4)+"%";
+				element2.style.width = (weekProgress*100).toFixed(4)+"%";
 			}
 			setInterval(update, 100);
+			window.onload = setWeekNumber;
 		</script>
 	</head>
 	<body>
 		<div class="text">
-			9-to-5 progress:
+			9-to-5 progress (today):
 		</div>
 		<div class="outer">
 			<div id="counter" class="counter"></div>
+		</div>
+		<div id="week" class="text">
+			Week's progress:
+		</div>
+		<div class="outer">
+			<div id="counter2" class="counter"></div>
 		</div>
 	</body>
 </html>
