@@ -41,6 +41,19 @@
 				document.getElementById("week").innerHTML = "Week's progress (W" + weekNo + "):";
 			}
 			
+			function getText(number, accuracy){
+				number *= 100;
+				if(number >= 100){
+					return "100%";
+				}
+				
+				if(number == 0){
+					return "0%";
+				}
+				
+				return number.toFixed(accuracy)+"%";
+			}
+			
 			function update(){	
 				var element = document.getElementById("counter");
 				var element2 = document.getElementById("counter2");
@@ -64,12 +77,13 @@
 				
 				if(date.getDay() == 0 || date.getDay() == 6){
 					weekProgress = 0.0;
+					progress = 0.0;
 				}
 				
-				element.innerHTML = (progress*100).toFixed(3)+"%";
-				element.style.width = (progress*100).toFixed(3)+"%";
-				element2.innerHTML = (weekProgress*100).toFixed(4)+"%";
-				element2.style.width = (weekProgress*100).toFixed(4)+"%";
+				element.innerHTML = getText(progress,3);
+				element.style.width = getText(progress,3);
+				element2.innerHTML = getText(weekProgress,4);
+				element2.style.width = getText(weekProgress,4);
 			}
 			setInterval(update, 100);
 			window.onload = setWeekNumber;
