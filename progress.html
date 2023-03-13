@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<style>
+			body{
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			.text{
+				display: block;
+				text-align: center;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				font-size: 2em;
+			}
+			.outer{
+				border: 1px solid black;
+				width: 100%;
+			}
+			.counter{
+				background-color: green;
+				font-size: 1.2em;
+				color: white;
+				text-align: center;
+				padding: 3px;
+			}
+		</style>
+		<script>
+			function update(){	
+				var element = document.getElementById("counter");
+				var date = new Date();
+				
+				var progress = 0.00;
+				
+				if(date.getHours() > 9){
+					progress += (date.getHours() - 9)/8;
+					progress += date.getMinutes()/60/8;
+					progress += date.getSeconds()/60/60/8;
+					progress += date.getMilliseconds()/1000/60/60/8;
+				}
+				
+				if(date.getHours() > 17){
+					progress = 100.0;
+				}
+							
+				element.innerHTML = (progress*100).toFixed(3)+"%";
+				element.style.width = (progress*100).toFixed(3)+"%";
+			}
+			setInterval(update, 100);
+		</script>
+	</head>
+	<body>
+		<div class="text">
+			9-to-5 progress:
+		</div>
+		<div class="outer">
+			<div id="counter" class="counter"></div>
+		</div>
+	</body>
+</html>
