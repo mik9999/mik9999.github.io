@@ -68,7 +68,7 @@
 				var progress = 0.0;
 				var weekProgress = (date.getDay()-1)/5;
 				
-				if(date.getHours() > 9){
+				if(date.getHours() >= 9){
 					progress += (date.getHours() - 9)/8;
 					progress += date.getMinutes()/60/8;
 					progress += date.getSeconds()/60/60/8;
