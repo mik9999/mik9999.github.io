@@ -92,10 +92,13 @@
 					progress = 0.0;
 				}
 				
-				element.innerHTML = getText(progress,3);
-				element.style.width = getText(progress,3);
-				element2.innerHTML = getText(weekProgress,3);
-				element2.style.width = getText(weekProgress,3);
+				var textDay = getText(progress,3);
+				var textWeek = getText(weekProgress,3);
+				
+				element.innerHTML = textDay;
+				element.style.width = textDay;
+				element2.innerHTML = textWeek;
+				element2.style.width = textWeek;
 			}
 			setInterval(update, 250);
 			window.onload = setWeekNumber;
