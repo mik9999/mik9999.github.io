@@ -1,0 +1,233 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>V60 Guide</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="https://emptybit.pl/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://emptybit.pl/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://emptybit.pl/favicon-16x16.png">
+		<link rel="manifest" href="https://emptybit.pl/site.webmanifest">
+		<link rel="mask-icon" href="https://emptybit.pl/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		
+		<style>
+			body{
+				font-family: Arial, Helvetica, sans-serif;
+				background-color: #1F1F1F;
+			}
+			.start{
+				border-radius: 5px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				padding-left: 100px;
+				padding-right: 100px;
+				border: none;
+				font-size: 1em;
+				color: white;
+				font-weight: bold;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+			}
+			.text{
+				display: block;
+				text-align: left;
+				text-indent: 40px;
+				margin-top: 20px;
+				margin-bottom: 10px;
+				font-size: 1em;
+				color: white;
+				font-weight: bold;
+			}
+			.outer{
+				border: 1px solid #0F0F0F;
+				width: 100%;
+				background-color: #292929;
+				border-radius: 5px;
+			}
+			.counter{
+				background-color: #7F85F5;
+				font-size: 1.2em;
+				color: white;
+				text-align: center;
+				padding-top: 3px;
+				padding-bottom: 3px;
+				border-radius: 5px;
+			}
+			.counter2{
+				background-color: gray;
+				font-size: 1.2em;
+				color: white;
+				text-align: center;
+				padding-top: 3px;
+				padding-bottom: 3px;
+				border-radius: 5px;
+			}
+			.counter3{
+				background-color: #C87C52;
+				font-size: 1.2em;
+				color: white;
+				text-align: center;
+				padding-top: 3px;
+				padding-bottom: 3px;
+				border-radius: 5px;
+			}
+			.start{
+				background-color: green;
+			}
+			
+		</style>
+		<script>
+			var start_date = null;
+			
+			var def=[
+				[0, 10, "s1"], // Pour 50g of water
+				[10, 15, "s2"], // Swirl
+				[15, 60, "s3"], // Bloom (pause)
+				[60, 70, "s4"], // Pour 50g of water
+				[70, 80, "s5"],	// Pause
+				[80, 90, "s6"], // Pour 50g of water
+				[90, 100, "s7"], // Pause
+				[100, 110, "s8"], // Pour 50g of water
+				[110, 120, "s9"], // Pause
+				[120, 130, "s10"], // Pour 50g of water
+				[130, 135, "s11"], // Swirl
+			]
+			
+			function getText(number, accuracy){
+				number *= 100;
+				if(number >= 100){
+					return "100%";
+				}
+				
+				if(number == 0){
+					return "0%";
+				}
+				
+				if(number%10 == 0){
+					return number.toFixed(0)+"%";
+				}
+				
+				return number.toFixed(accuracy)+"%";
+			}
+			
+			function update(){
+				if(start_date == null){
+					return;
+				}
+								
+				var date = new Date();
+				var s_delta = (date - start_date)/1000;
+				
+				for(var i=0; i<def.length; i++){
+					if(s_delta >= def[i][0] && s_delta < def[i][1]){
+						update_element(s_delta - def[i][0], def[i][1] - def[i][0], def[i][2]);
+						return;
+					}
+				}
+			}
+			
+			function reset(){
+				for(var i=0; i<def.length; i++){
+					var element = document.getElementById(def[i][2]);
+					element.innerHTML = "0s";
+					element.style.width = "0%";
+				}
+			}
+			
+			function update_element(s_delta, length, element_name){	
+				var element = document.getElementById(element_name);
+				
+				var percent = s_delta/length * 100;
+								
+				element.innerHTML = s_delta.toFixed(1) + "s";
+				element.style.width = percent + "%";
+			}
+			
+			setInterval(update, 10);
+			
+			function start(){
+				reset();
+				start_date = new Date();
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="Start" onclick="start()" class="start"/>
+		
+		<div class="text" id="counter_text">
+			50g of water (10s)
+		</div>
+		<div class="outer">
+			<div id="s1" class="counter" style="width: 0%">0s</div>
+		</div>
+
+		<div class="text" id="counter_text">
+			Swirl (5s)
+		</div>
+		<div class="outer">
+			<div id="s2" class="counter3" style="width: 0%">0s</div>
+		</div>
+		
+		<div class="text" id="counter_text">
+			Bloom (45s)
+		</div>
+		<div class="outer">
+			<div id="s3" class="counter2" style="width: 0%">0s</div>
+		</div>
+		
+		<div class="text" id="counter_text">
+			50g of water (10s)
+		</div>
+		<div class="outer">
+			<div id="s4" class="counter" style="width: 0%">0s</div>
+		</div>
+		
+		<div class="text" id="counter_text">
+			Pause (10s)
+		</div>
+		<div class="outer">
+			<div id="s5" class="counter2" style="width: 0%">0s</div>
+		</div>
+		
+		<div class="text" id="counter_text">
+			50g of water (10s)
+		</div>
+		<div class="outer">
+			<div id="s6" class="counter" style="width: 0%">0s</div>
+		</div>
+		
+		<div class="text" id="counter_text">
+			Pause (10s)
+		</div>
+		<div class="outer">
+			<div id="s7" class="counter2" style="width: 0%">0s</div>
+		</div>
+		
+		<div class="text" id="counter_text">
+			50g of water (10s)
+		</div>
+		<div class="outer">
+			<div id="s8" class="counter" style="width: 0%">0s</div>
+		</div>
+		
+		<div class="text" id="counter_text">
+			Pause (10s)
+		</div>
+		<div class="outer">
+			<div id="s9" class="counter2" style="width: 0%">0s</div>
+		</div>
+		
+		<div class="text" id="counter_text">
+			50g of water (10s)
+		</div>
+		<div class="outer">
+			<div id="s10" class="counter" style="width: 0%">0s</div>
+		</div>
+		
+		<div class="text" id="counter_text">
+			Swirl (5)
+		</div>
+		<div class="outer">
+			<div id="s11" class="counter3" style="width: 0%">0s</div>
+		</div>
+
+</body></html>
