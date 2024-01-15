@@ -42,10 +42,14 @@
 			function setWeekNumber(){
 				var currentDate = new Date();
 				var startDate = new Date(currentDate.getFullYear(), 0, 1);
-				var days = Math.floor((currentDate - startDate) /
+				var days = Math.ceil((currentDate - startDate) /
 					(24 * 60 * 60 * 1000));
          
 				var weekNo = Math.ceil(days / 7);
+				if(weekNo < 10){
+					weekNo = "0"+weekNo;
+				}
+				
 				document.getElementById("week").innerHTML = "Week's progress (W" + weekNo + "):";
 			}
 			
