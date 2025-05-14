@@ -61,6 +61,8 @@
 			}
 		</style>
 		<script>
+			var startH = 8;
+			
 			function setWeekNumber(){
 				var currentDate = new Date();
 				var startDate = new Date(currentDate.getFullYear(), 0, 1);
@@ -92,6 +94,18 @@
 				return number.toFixed(accuracy)+"%";
 			}
 			
+			function change(){
+				var x = document.getElementById("mode");
+				startH = x.value;
+				
+				if(startH == 8){
+					document.getElementById("header").innerHTML = "8-to-4 progress (today):";
+				}else{
+					document.getElementById("header").innerHTML = "9-to-5 progress (today):";
+				}
+				
+			}
+			
 			function update(){	
 				var element = document.getElementById("counter");
 				var element2 = document.getElementById("counter2");
@@ -101,7 +115,7 @@
 				var weekProgress = (date.getDay()-1)/5;
 				
 				if(date.getHours() >= 9){
-					progress += (date.getHours() - 9)/8;
+					progress += (date.getHours() - startH)/8;
 					progress += date.getMinutes()/60/8;
 					progress += date.getSeconds()/60/60/8;
 					progress += date.getMilliseconds()/1000/60/60/8;
@@ -131,8 +145,12 @@
 		</script>
 	</head>
 	<body>
-		<div class="text">
-			9-to-5 progress (today):
+		<select id="mode" onchange="change()">
+			  <option value="8">8-to-4</option>
+			  <option value="9">9-to-5</option>
+		</select>
+		<div id="header" class="text">
+			8-to-4 progress (today):
 		</div>
 		<div class="outer">
 			<div id="counter" class="counter"></div>
